@@ -1,0 +1,96 @@
+{
+  "name": "wxt-react-starter",
+  "description": "LinkSave is a privacy-minded Chrome extension for saving, organizing, and finding links. Its React/WXT popup is backed by an Express and Mongoose API with Google OAuth authentication.",
+  "languages": [
+    "config",
+    "css",
+    "html",
+    "javascript",
+    "json",
+    "markdown",
+    "typescript"
+  ],
+  "frameworks": [
+    "Express",
+    "Mongoose",
+    "React",
+    "WXT",
+    "WXT React Module"
+  ],
+  "files": [
+    { "path": ".env.example", "language": "config", "sizeLines": 1, "fileCategory": "config" },
+    { "path": "CODE_OF_CONDUCT.md", "language": "markdown", "sizeLines": 73, "fileCategory": "docs" },
+    { "path": "CONTRIBUTING.md", "language": "markdown", "sizeLines": 48, "fileCategory": "docs" },
+    { "path": "README.md", "language": "markdown", "sizeLines": 135, "fileCategory": "docs" },
+    { "path": "SECURITY.md", "language": "markdown", "sizeLines": 17, "fileCategory": "docs" },
+    { "path": "entrypoints/background.ts", "language": "typescript", "sizeLines": 76, "fileCategory": "code" },
+    { "path": "entrypoints/popup/App.css", "language": "css", "sizeLines": 862, "fileCategory": "markup" },
+    { "path": "entrypoints/popup/App.tsx", "language": "typescript", "sizeLines": 110, "fileCategory": "code" },
+    { "path": "entrypoints/popup/components/Dashboard.tsx", "language": "typescript", "sizeLines": 544, "fileCategory": "code" },
+    { "path": "entrypoints/popup/components/EmptyState.tsx", "language": "typescript", "sizeLines": 25, "fileCategory": "code" },
+    { "path": "entrypoints/popup/components/LinkCard.tsx", "language": "typescript", "sizeLines": 252, "fileCategory": "code" },
+    { "path": "entrypoints/popup/components/SignIn.tsx", "language": "typescript", "sizeLines": 88, "fileCategory": "code" },
+    { "path": "entrypoints/popup/index.html", "language": "html", "sizeLines": 36, "fileCategory": "markup" },
+    { "path": "entrypoints/popup/main.tsx", "language": "typescript", "sizeLines": 10, "fileCategory": "code" },
+    { "path": "entrypoints/popup/style.css", "language": "css", "sizeLines": 130, "fileCategory": "markup" },
+    { "path": "lib/api.ts", "language": "typescript", "sizeLines": 94, "fileCategory": "code" },
+    { "path": "lib/auth.ts", "language": "typescript", "sizeLines": 119, "fileCategory": "code" },
+    { "path": "lib/config.ts", "language": "typescript", "sizeLines": 8, "fileCategory": "code" },
+    { "path": "lib/search.ts", "language": "typescript", "sizeLines": 180, "fileCategory": "code" },
+    { "path": "package.json", "language": "json", "sizeLines": 30, "fileCategory": "config" },
+    { "path": "server/.env.example", "language": "config", "sizeLines": 2, "fileCategory": "config" },
+    { "path": "server/index.js", "language": "javascript", "sizeLines": 153, "fileCategory": "code" },
+    { "path": "server/middleware/auth.js", "language": "javascript", "sizeLines": 48, "fileCategory": "code" },
+    { "path": "server/models/Link.js", "language": "javascript", "sizeLines": 36, "fileCategory": "code" },
+    { "path": "server/package.json", "language": "json", "sizeLines": 18, "fileCategory": "config" },
+    { "path": "server/vercel.json", "language": "json", "sizeLines": 15, "fileCategory": "config" },
+    { "path": "tsconfig.json", "language": "json", "sizeLines": 7, "fileCategory": "config" },
+    { "path": "wxt.config.ts", "language": "typescript", "sizeLines": 27, "fileCategory": "code" }
+  ],
+  "totalFiles": 28,
+  "filteredByIgnore": 0,
+  "estimatedComplexity": "small",
+  "importMap": {
+    ".env.example": [],
+    "CODE_OF_CONDUCT.md": [],
+    "CONTRIBUTING.md": [],
+    "README.md": [],
+    "SECURITY.md": [],
+    "entrypoints/background.ts": [],
+    "entrypoints/popup/App.css": [],
+    "entrypoints/popup/App.tsx": [
+      "entrypoints/popup/components/SignIn.tsx",
+      "entrypoints/popup/components/Dashboard.tsx",
+      "entrypoints/popup/App.css"
+    ],
+    "entrypoints/popup/components/Dashboard.tsx": [
+      "entrypoints/popup/components/LinkCard.tsx",
+      "entrypoints/popup/components/EmptyState.tsx"
+    ],
+    "entrypoints/popup/components/EmptyState.tsx": [],
+    "entrypoints/popup/components/LinkCard.tsx": [],
+    "entrypoints/popup/components/SignIn.tsx": [],
+    "entrypoints/popup/index.html": [],
+    "entrypoints/popup/main.tsx": [
+      "entrypoints/popup/App.tsx",
+      "entrypoints/popup/style.css"
+    ],
+    "entrypoints/popup/style.css": [],
+    "lib/api.ts": ["lib/config.ts"],
+    "lib/auth.ts": ["lib/config.ts"],
+    "lib/config.ts": [],
+    "lib/search.ts": ["lib/api.ts"],
+    "package.json": [],
+    "server/.env.example": [],
+    "server/index.js": [
+      "server/middleware/auth.js",
+      "server/models/Link.js"
+    ],
+    "server/middleware/auth.js": [],
+    "server/models/Link.js": [],
+    "server/package.json": [],
+    "server/vercel.json": [],
+    "tsconfig.json": [],
+    "wxt.config.ts": []
+  }
+}

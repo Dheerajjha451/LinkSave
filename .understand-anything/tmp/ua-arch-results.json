@@ -1,0 +1,252 @@
+{
+  "scriptCompleted": true,
+  "commonPathPrefix": "",
+  "directoryGroups": {
+    "root": [
+      "config:.env.example",
+      "document:CODE_OF_CONDUCT.md",
+      "document:CONTRIBUTING.md",
+      "document:README.md",
+      "document:SECURITY.md",
+      "config:package.json",
+      "config:tsconfig.json",
+      "file:wxt.config.ts"
+    ],
+    "entrypoints": [
+      "file:entrypoints/background.ts",
+      "file:entrypoints/popup/App.css",
+      "file:entrypoints/popup/App.tsx",
+      "file:entrypoints/popup/components/Dashboard.tsx",
+      "file:entrypoints/popup/components/EmptyState.tsx",
+      "file:entrypoints/popup/components/LinkCard.tsx",
+      "file:entrypoints/popup/components/SignIn.tsx",
+      "file:entrypoints/popup/index.html",
+      "file:entrypoints/popup/main.tsx",
+      "file:entrypoints/popup/style.css"
+    ],
+    "lib": [
+      "file:lib/api.ts",
+      "file:lib/auth.ts",
+      "file:lib/config.ts",
+      "file:lib/search.ts"
+    ],
+    "server": [
+      "config:server/.env.example",
+      "file:server/index.js",
+      "file:server/middleware/auth.js",
+      "file:server/models/Link.js",
+      "config:server/package.json",
+      "config:server/vercel.json"
+    ]
+  },
+  "nodeTypeGroups": {
+    "config": [
+      "config:.env.example",
+      "config:package.json",
+      "config:server/.env.example",
+      "config:server/package.json",
+      "config:server/vercel.json",
+      "config:tsconfig.json"
+    ],
+    "document": [
+      "document:CODE_OF_CONDUCT.md",
+      "document:CONTRIBUTING.md",
+      "document:README.md",
+      "document:SECURITY.md"
+    ],
+    "file": [
+      "file:entrypoints/background.ts",
+      "file:entrypoints/popup/App.css",
+      "file:entrypoints/popup/App.tsx",
+      "file:entrypoints/popup/components/Dashboard.tsx",
+      "file:entrypoints/popup/components/EmptyState.tsx",
+      "file:entrypoints/popup/components/LinkCard.tsx",
+      "file:entrypoints/popup/components/SignIn.tsx",
+      "file:entrypoints/popup/index.html",
+      "file:entrypoints/popup/main.tsx",
+      "file:entrypoints/popup/style.css",
+      "file:lib/api.ts",
+      "file:lib/auth.ts",
+      "file:lib/config.ts",
+      "file:lib/search.ts",
+      "file:server/index.js",
+      "file:server/middleware/auth.js",
+      "file:server/models/Link.js",
+      "file:wxt.config.ts"
+    ]
+  },
+  "crossCategoryEdges": [
+    {
+      "fromType": "file",
+      "toType": "file",
+      "edgeType": "imports",
+      "count": 12
+    },
+    {
+      "fromType": "config",
+      "toType": "file",
+      "edgeType": "configures",
+      "count": 8
+    },
+    {
+      "fromType": "document",
+      "toType": "file",
+      "edgeType": "documents",
+      "count": 4
+    },
+    {
+      "fromType": "document",
+      "toType": "config",
+      "edgeType": "documents",
+      "count": 1
+    }
+  ],
+  "interGroupImports": [
+    {
+      "from": "entrypoints",
+      "to": "entrypoints",
+      "count": 7
+    },
+    {
+      "from": "lib",
+      "to": "lib",
+      "count": 3
+    },
+    {
+      "from": "server",
+      "to": "server",
+      "count": 2
+    }
+  ],
+  "intraGroupDensity": {
+    "root": {
+      "internalEdges": 0,
+      "totalEdges": 0,
+      "density": 0
+    },
+    "entrypoints": {
+      "internalEdges": 7,
+      "totalEdges": 7,
+      "density": 1
+    },
+    "lib": {
+      "internalEdges": 3,
+      "totalEdges": 3,
+      "density": 1
+    },
+    "server": {
+      "internalEdges": 2,
+      "totalEdges": 2,
+      "density": 1
+    }
+  },
+  "patternMatches": {
+    "root": "unclassified",
+    "entrypoints": "unclassified",
+    "lib": "service",
+    "server": "unclassified"
+  },
+  "deploymentTopology": {
+    "hasDockerfile": false,
+    "hasCompose": false,
+    "hasK8s": false,
+    "hasTerraform": false,
+    "hasCI": false,
+    "infraFiles": [
+      "server/vercel.json"
+    ]
+  },
+  "dataPipeline": {
+    "schemaFiles": [],
+    "migrationFiles": [],
+    "dataModelFiles": [
+      "server/models/Link.js"
+    ],
+    "apiHandlerFiles": []
+  },
+  "docCoverage": {
+    "groupsWithDocs": 1,
+    "totalGroups": 4,
+    "coverageRatio": 0.25,
+    "undocumentedGroups": [
+      "entrypoints",
+      "lib",
+      "server"
+    ]
+  },
+  "dependencyDirection": [],
+  "fileStats": {
+    "totalFileNodes": 28,
+    "filesPerGroup": {
+      "root": 8,
+      "entrypoints": 10,
+      "lib": 4,
+      "server": 6
+    },
+    "nodeTypeCounts": {
+      "config": 6,
+      "document": 4,
+      "file": 18
+    }
+  },
+  "fileFanIn": {
+    "config:.env.example": 0,
+    "document:CODE_OF_CONDUCT.md": 0,
+    "document:CONTRIBUTING.md": 0,
+    "document:README.md": 0,
+    "document:SECURITY.md": 0,
+    "file:entrypoints/background.ts": 0,
+    "file:entrypoints/popup/App.css": 1,
+    "file:entrypoints/popup/App.tsx": 1,
+    "file:entrypoints/popup/components/Dashboard.tsx": 1,
+    "file:entrypoints/popup/components/EmptyState.tsx": 1,
+    "file:entrypoints/popup/components/LinkCard.tsx": 1,
+    "file:entrypoints/popup/components/SignIn.tsx": 1,
+    "file:entrypoints/popup/index.html": 0,
+    "file:entrypoints/popup/main.tsx": 0,
+    "file:entrypoints/popup/style.css": 1,
+    "file:lib/api.ts": 1,
+    "file:lib/auth.ts": 0,
+    "file:lib/config.ts": 2,
+    "file:lib/search.ts": 0,
+    "config:package.json": 0,
+    "config:server/.env.example": 0,
+    "file:server/index.js": 0,
+    "file:server/middleware/auth.js": 1,
+    "file:server/models/Link.js": 1,
+    "config:server/package.json": 0,
+    "config:server/vercel.json": 0,
+    "config:tsconfig.json": 0,
+    "file:wxt.config.ts": 0
+  },
+  "fileFanOut": {
+    "config:.env.example": 0,
+    "document:CODE_OF_CONDUCT.md": 0,
+    "document:CONTRIBUTING.md": 0,
+    "document:README.md": 0,
+    "document:SECURITY.md": 0,
+    "file:entrypoints/background.ts": 0,
+    "file:entrypoints/popup/App.css": 0,
+    "file:entrypoints/popup/App.tsx": 3,
+    "file:entrypoints/popup/components/Dashboard.tsx": 2,
+    "file:entrypoints/popup/components/EmptyState.tsx": 0,
+    "file:entrypoints/popup/components/LinkCard.tsx": 0,
+    "file:entrypoints/popup/components/SignIn.tsx": 0,
+    "file:entrypoints/popup/index.html": 0,
+    "file:entrypoints/popup/main.tsx": 2,
+    "file:entrypoints/popup/style.css": 0,
+    "file:lib/api.ts": 1,
+    "file:lib/auth.ts": 1,
+    "file:lib/config.ts": 0,
+    "file:lib/search.ts": 1,
+    "config:package.json": 0,
+    "config:server/.env.example": 0,
+    "file:server/index.js": 2,
+    "file:server/middleware/auth.js": 0,
+    "file:server/models/Link.js": 0,
+    "config:server/package.json": 0,
+    "config:server/vercel.json": 0,
+    "config:tsconfig.json": 0,
+    "file:wxt.config.ts": 0
+  }
+}

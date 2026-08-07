@@ -1,0 +1,65 @@
+[
+  {
+    "id": "layer:extension-popup-ui",
+    "name": "Extension Popup UI",
+    "description": "The React popup entry point, visual styles, and signed-in link-management components that users interact with in LinkSave.",
+    "nodeIds": [
+      "file:entrypoints/popup/App.css",
+      "file:entrypoints/popup/App.tsx",
+      "file:entrypoints/popup/components/Dashboard.tsx",
+      "file:entrypoints/popup/components/EmptyState.tsx",
+      "file:entrypoints/popup/components/LinkCard.tsx",
+      "file:entrypoints/popup/components/SignIn.tsx",
+      "file:entrypoints/popup/index.html",
+      "file:entrypoints/popup/main.tsx",
+      "file:entrypoints/popup/style.css"
+    ]
+  },
+  {
+    "id": "layer:extension-platform",
+    "name": "Extension Platform",
+    "description": "The background context-menu workflow and shared browser, authentication, HTTP, configuration, and search capabilities used by the extension.",
+    "nodeIds": [
+      "file:entrypoints/background.ts",
+      "file:lib/api.ts",
+      "file:lib/auth.ts",
+      "file:lib/config.ts",
+      "file:lib/search.ts"
+    ]
+  },
+  {
+    "id": "layer:api-backend",
+    "name": "API Backend",
+    "description": "The Express entry point, bearer-token middleware, and Mongoose Link model that expose and persist LinkSave API operations.",
+    "nodeIds": [
+      "file:server/index.js",
+      "file:server/middleware/auth.js",
+      "file:server/models/Link.js"
+    ]
+  },
+  {
+    "id": "layer:project-configuration",
+    "name": "Project Configuration",
+    "description": "Extension and backend package metadata, environment templates, compiler settings, deployment routing, and WXT manifest configuration.",
+    "nodeIds": [
+      "config:.env.example",
+      "config:package.json",
+      "config:server/.env.example",
+      "config:server/package.json",
+      "config:server/vercel.json",
+      "config:tsconfig.json",
+      "file:wxt.config.ts"
+    ]
+  },
+  {
+    "id": "layer:project-documentation",
+    "name": "Project Documentation",
+    "description": "The LinkSave overview, development contribution, security-reporting, and community-governance documentation.",
+    "nodeIds": [
+      "document:CODE_OF_CONDUCT.md",
+      "document:CONTRIBUTING.md",
+      "document:README.md",
+      "document:SECURITY.md"
+    ]
+  }
+]

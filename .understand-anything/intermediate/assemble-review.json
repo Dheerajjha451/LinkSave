@@ -1,0 +1,14 @@
+{
+  "fixedSectionOk": true,
+  "nodesRecovered": 0,
+  "edgesRestored": 0,
+  "crossBatchEdgesAdded": 0,
+  "typesRemapped": 0,
+  "complexityRemapped": 0,
+  "notes": [
+    "The assembled graph is mechanically sound: all 53 nodes have unique IDs and required fields, and all 80 edges have valid source and target nodes with no duplicate (source, target, type) triples.",
+    "All 28 files in the scan inventory have corresponding graph nodes. All 12 import-map relationships have matching imports edges, with no unexpected imports edges.",
+    "Graph coverage warning: source files changed after the scan. The current workspace contains 20 relevant files absent from scan-result.json, including the new server configuration, controller, route, service, validator, utility, middleware, and test files. This review validates every node and edge in the assembled graph, but it cannot validate coverage of those post-scan files. Re-run the scan and graph assembly before relying on this graph as a representation of the current codebase.",
+    "No merge-script stderr report was supplied to this review, so Fixed/Could not fix pattern counts could not be independently assessed. The batch and assembled graphs are identical in node and edge counts."
+  ]
+}

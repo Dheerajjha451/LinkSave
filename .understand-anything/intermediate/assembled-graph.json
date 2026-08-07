@@ -1,0 +1,1384 @@
+{
+  "nodes": [
+    {
+      "id": "config:.env.example",
+      "type": "config",
+      "name": ".env.example",
+      "filePath": ".env.example",
+      "summary": "Documents the public API base URL required by the extension build.",
+      "tags": [
+        "configuration",
+        "environment",
+        "extension"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:CODE_OF_CONDUCT.md",
+      "type": "document",
+      "name": "CODE_OF_CONDUCT.md",
+      "filePath": "CODE_OF_CONDUCT.md",
+      "summary": "Sets contributor conduct expectations and the enforcement process for the project community.",
+      "tags": [
+        "documentation",
+        "community",
+        "governance"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:CONTRIBUTING.md",
+      "type": "document",
+      "name": "CONTRIBUTING.md",
+      "filePath": "CONTRIBUTING.md",
+      "summary": "Explains development setup, change workflow, pull-request expectations, and how to report issues.",
+      "tags": [
+        "documentation",
+        "development",
+        "contributing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "Introduces LinkSave, its extension and API architecture, local setup, distribution steps, and privacy-relevant permissions.",
+      "tags": [
+        "documentation",
+        "overview",
+        "entry-point",
+        "setup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:SECURITY.md",
+      "type": "document",
+      "name": "SECURITY.md",
+      "filePath": "SECURITY.md",
+      "summary": "Defines supported versions, vulnerability reporting guidance, and credential-handling expectations.",
+      "tags": [
+        "documentation",
+        "security",
+        "credentials"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:entrypoints/background.ts",
+      "type": "file",
+      "name": "background.ts",
+      "filePath": "entrypoints/background.ts",
+      "summary": "Registers the browser context-menu action, saves the selected page through the API, and presents save-result notifications.",
+      "tags": [
+        "background",
+        "context-menu",
+        "notifications",
+        "api-client"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:entrypoints/popup/App.css",
+      "type": "file",
+      "name": "App.css",
+      "filePath": "entrypoints/popup/App.css",
+      "summary": "Provides the popup's complete component styling, including sign-in, dashboard, link-card, filtering, and responsive states.",
+      "tags": [
+        "styles",
+        "popup",
+        "components",
+        "responsive"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:entrypoints/popup/App.tsx",
+      "type": "file",
+      "name": "App.tsx",
+      "filePath": "entrypoints/popup/App.tsx",
+      "summary": "Owns popup authentication state, renders either sign-in or dashboard UI, and uses cached profile data to reduce popup startup latency.",
+      "tags": [
+        "popup",
+        "authentication",
+        "react-component",
+        "state-management"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:entrypoints/popup/components/Dashboard.tsx",
+      "type": "file",
+      "name": "Dashboard.tsx",
+      "filePath": "entrypoints/popup/components/Dashboard.tsx",
+      "summary": "Implements the signed-in link-management dashboard with cached loading, saves, edits, deletion, search, date filtering, and clipboard actions.",
+      "tags": [
+        "dashboard",
+        "react-component",
+        "link-management",
+        "client-cache"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:entrypoints/popup/components/EmptyState.tsx",
+      "type": "file",
+      "name": "EmptyState.tsx",
+      "filePath": "entrypoints/popup/components/EmptyState.tsx",
+      "summary": "Renders the reusable empty-state illustration and copy used when there are no saved links or no matching results.",
+      "tags": [
+        "react-component",
+        "empty-state",
+        "ui",
+        "reusable"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:entrypoints/popup/components/LinkCard.tsx",
+      "type": "file",
+      "name": "LinkCard.tsx",
+      "filePath": "entrypoints/popup/components/LinkCard.tsx",
+      "summary": "Renders an individual saved link with favicon fallbacks, title editing, opening, copying, and deletion confirmation.",
+      "tags": [
+        "react-component",
+        "link-card",
+        "clipboard",
+        "editing"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:entrypoints/popup/components/SignIn.tsx",
+      "type": "file",
+      "name": "SignIn.tsx",
+      "filePath": "entrypoints/popup/components/SignIn.tsx",
+      "summary": "Provides the Google sign-in interaction and translates common OAuth or backend failures into actionable popup messages.",
+      "tags": [
+        "react-component",
+        "authentication",
+        "oauth",
+        "error-handling"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:entrypoints/popup/index.html",
+      "type": "file",
+      "name": "index.html",
+      "filePath": "entrypoints/popup/index.html",
+      "summary": "Supplies the HTML document shell that WXT uses to mount the extension popup application.",
+      "tags": [
+        "markup",
+        "popup",
+        "entry-point",
+        "html"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:entrypoints/popup/main.tsx",
+      "type": "file",
+      "name": "main.tsx",
+      "filePath": "entrypoints/popup/main.tsx",
+      "summary": "Bootstraps the React popup by mounting the root App component and global stylesheet.",
+      "tags": [
+        "entry-point",
+        "react",
+        "popup",
+        "bootstrap"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:entrypoints/popup/style.css",
+      "type": "file",
+      "name": "style.css",
+      "filePath": "entrypoints/popup/style.css",
+      "summary": "Defines global CSS resets, typography, variables, and base styles for the popup UI.",
+      "tags": [
+        "styles",
+        "global",
+        "popup",
+        "css"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:lib/api.ts",
+      "type": "file",
+      "name": "api.ts",
+      "filePath": "lib/api.ts",
+      "summary": "Centralizes authenticated link API requests and parses the backend's data and error envelopes into typed client results.",
+      "tags": [
+        "api-client",
+        "http",
+        "error-handling",
+        "type-definition"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:lib/auth.ts",
+      "type": "file",
+      "name": "auth.ts",
+      "filePath": "lib/auth.ts",
+      "summary": "Wraps Chrome Identity and storage APIs for OAuth tokens, cached user profiles, sign-out, and backend profile retrieval.",
+      "tags": [
+        "authentication",
+        "oauth",
+        "chrome-api",
+        "client-cache"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:lib/config.ts",
+      "type": "file",
+      "name": "config.ts",
+      "filePath": "lib/config.ts",
+      "summary": "Exports the extension API base URL from the build-time environment configuration.",
+      "tags": [
+        "configuration",
+        "api-client",
+        "environment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lib/search.ts",
+      "type": "file",
+      "name": "search.ts",
+      "filePath": "lib/search.ts",
+      "summary": "Implements client-side fuzzy text search, relevance ranking, and date-range filtering for saved links.",
+      "tags": [
+        "search",
+        "filtering",
+        "utility",
+        "ranking"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:package.json",
+      "type": "config",
+      "name": "package.json",
+      "filePath": "package.json",
+      "summary": "Defines the extension package metadata, WXT build scripts, and React/TypeScript development dependencies.",
+      "tags": [
+        "configuration",
+        "build-system",
+        "extension",
+        "dependencies"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:server/.env.example",
+      "type": "config",
+      "name": ".env.example",
+      "filePath": "server/.env.example",
+      "summary": "Documents the MongoDB connection string and local port expected by the backend service.",
+      "tags": [
+        "configuration",
+        "environment",
+        "database"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server/index.js",
+      "type": "file",
+      "name": "index.js",
+      "filePath": "server/index.js",
+      "summary": "Composes the Express API with CORS, JSON parsing, health checks, link and user routers, and centralized error handling; it starts the listener for local use.",
+      "tags": [
+        "api",
+        "express",
+        "entry-point",
+        "routing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:server/middleware/auth.js",
+      "type": "file",
+      "name": "auth.js",
+      "filePath": "server/middleware/auth.js",
+      "summary": "Validates bearer tokens against Google's user-info endpoint and attaches the authenticated account to the request.",
+      "tags": [
+        "middleware",
+        "authentication",
+        "oauth",
+        "security"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:server/models/Link.js",
+      "type": "file",
+      "name": "Link.js",
+      "filePath": "server/models/Link.js",
+      "summary": "Defines the Mongoose link document, ownership fields, input-size limits, timestamps, and per-user URL uniqueness index.",
+      "tags": [
+        "data-model",
+        "mongoose",
+        "database",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:server/package.json",
+      "type": "config",
+      "name": "package.json",
+      "filePath": "server/package.json",
+      "summary": "Defines backend service metadata, Node development commands, tests, and Express/Mongoose dependencies.",
+      "tags": [
+        "configuration",
+        "build-system",
+        "api",
+        "dependencies"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:server/vercel.json",
+      "type": "config",
+      "name": "vercel.json",
+      "filePath": "server/vercel.json",
+      "summary": "Configures Vercel to build the Express entry point and route requests to it.",
+      "tags": [
+        "configuration",
+        "deployment",
+        "vercel",
+        "api"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:tsconfig.json",
+      "type": "config",
+      "name": "tsconfig.json",
+      "filePath": "tsconfig.json",
+      "summary": "Extends WXT TypeScript settings and enables JSX compilation for the React extension.",
+      "tags": [
+        "configuration",
+        "typescript",
+        "build-system",
+        "react"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:wxt.config.ts",
+      "type": "file",
+      "name": "wxt.config.ts",
+      "filePath": "wxt.config.ts",
+      "summary": "Configures WXT, the React module, extension manifest metadata, OAuth scopes, and the minimum Chrome permissions needed by LinkSave.",
+      "tags": [
+        "configuration",
+        "wxt",
+        "extension",
+        "oauth"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:entrypoints/popup/App.tsx:App",
+      "type": "function",
+      "name": "App",
+      "filePath": "entrypoints/popup/App.tsx",
+      "lineRange": [
+        20,
+        108
+      ],
+      "summary": "Initializes the popup session and chooses between authentication and dashboard views while refreshing cached profile data in the background.",
+      "tags": [
+        "react-component",
+        "authentication",
+        "popup",
+        "state-management"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:entrypoints/popup/components/Dashboard.tsx:Dashboard",
+      "type": "function",
+      "name": "Dashboard",
+      "filePath": "entrypoints/popup/components/Dashboard.tsx",
+      "lineRange": [
+        21,
+        544
+      ],
+      "summary": "Coordinates all signed-in link operations, optimistic UI changes, cached state, search filters, and dashboard rendering.",
+      "tags": [
+        "react-component",
+        "dashboard",
+        "link-management",
+        "state-management"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:entrypoints/popup/components/EmptyState.tsx:EmptyState",
+      "type": "function",
+      "name": "EmptyState",
+      "filePath": "entrypoints/popup/components/EmptyState.tsx",
+      "lineRange": [
+        6,
+        25
+      ],
+      "summary": "Renders a customizable empty-state visual for empty collections and empty filter results.",
+      "tags": [
+        "react-component",
+        "empty-state",
+        "ui"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:entrypoints/popup/components/LinkCard.tsx:LinkCard",
+      "type": "function",
+      "name": "LinkCard",
+      "filePath": "entrypoints/popup/components/LinkCard.tsx",
+      "lineRange": [
+        62,
+        207
+      ],
+      "summary": "Displays a saved link and manages its per-card favicon, edit, copy, open, and deletion interactions.",
+      "tags": [
+        "react-component",
+        "link-card",
+        "editing",
+        "ui"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:entrypoints/popup/components/LinkCard.tsx:CopyButton",
+      "type": "function",
+      "name": "CopyButton",
+      "filePath": "entrypoints/popup/components/LinkCard.tsx",
+      "lineRange": [
+        212,
+        252
+      ],
+      "summary": "Copies a link URL with a legacy browser fallback and temporary visual confirmation.",
+      "tags": [
+        "react-component",
+        "clipboard",
+        "utility",
+        "ui"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:entrypoints/popup/components/SignIn.tsx:SignIn",
+      "type": "function",
+      "name": "SignIn",
+      "filePath": "entrypoints/popup/components/SignIn.tsx",
+      "lineRange": [
+        8,
+        88
+      ],
+      "summary": "Runs interactive Chrome OAuth sign-in and renders loading and mapped failure states for the user.",
+      "tags": [
+        "react-component",
+        "authentication",
+        "oauth",
+        "error-handling"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lib/api.ts:getApiErrorMessage",
+      "type": "function",
+      "name": "getApiErrorMessage",
+      "filePath": "lib/api.ts",
+      "lineRange": [
+        24,
+        29
+      ],
+      "summary": "Extracts a safe human-readable message from the API error envelope or HTTP status.",
+      "tags": [
+        "api-client",
+        "error-handling",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/api.ts:readApiData",
+      "type": "function",
+      "name": "readApiData",
+      "filePath": "lib/api.ts",
+      "lineRange": [
+        31,
+        41
+      ],
+      "summary": "Validates successful API responses and returns their typed data envelope, throwing normalized request errors otherwise.",
+      "tags": [
+        "api-client",
+        "validation",
+        "error-handling"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/api.ts:getLinks",
+      "type": "function",
+      "name": "getLinks",
+      "filePath": "lib/api.ts",
+      "lineRange": [
+        46,
+        53
+      ],
+      "summary": "Fetches the current user's saved links with bearer-token authorization.",
+      "tags": [
+        "api-client",
+        "links",
+        "read"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/api.ts:saveLink",
+      "type": "function",
+      "name": "saveLink",
+      "filePath": "lib/api.ts",
+      "lineRange": [
+        58,
+        73
+      ],
+      "summary": "Posts a new link payload to the authenticated links endpoint and returns the created record.",
+      "tags": [
+        "api-client",
+        "links",
+        "create"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/api.ts:updateLink",
+      "type": "function",
+      "name": "updateLink",
+      "filePath": "lib/api.ts",
+      "lineRange": [
+        78,
+        94
+      ],
+      "summary": "Updates an existing link's title through the authenticated API and returns the revised record.",
+      "tags": [
+        "api-client",
+        "links",
+        "update"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/api.ts:deleteLink",
+      "type": "function",
+      "name": "deleteLink",
+      "filePath": "lib/api.ts",
+      "lineRange": [
+        99,
+        106
+      ],
+      "summary": "Deletes a saved link through the authenticated API and surfaces its normalized failure message.",
+      "tags": [
+        "api-client",
+        "links",
+        "delete"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/auth.ts:getCachedUserInfo",
+      "type": "function",
+      "name": "getCachedUserInfo",
+      "filePath": "lib/auth.ts",
+      "lineRange": [
+        16,
+        26
+      ],
+      "summary": "Reads the previously cached non-sensitive user profile from Chrome local storage.",
+      "tags": [
+        "authentication",
+        "chrome-api",
+        "client-cache"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/auth.ts:cacheUserInfo",
+      "type": "function",
+      "name": "cacheUserInfo",
+      "filePath": "lib/auth.ts",
+      "lineRange": [
+        29,
+        33
+      ],
+      "summary": "Stores a non-sensitive account profile in Chrome local storage for faster popup rendering.",
+      "tags": [
+        "authentication",
+        "chrome-api",
+        "client-cache"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/auth.ts:clearCachedUserInfo",
+      "type": "function",
+      "name": "clearCachedUserInfo",
+      "filePath": "lib/auth.ts",
+      "lineRange": [
+        35,
+        39
+      ],
+      "summary": "Removes the locally cached user profile after a missing session or sign-out.",
+      "tags": [
+        "authentication",
+        "chrome-api",
+        "client-cache"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/auth.ts:getAuthToken",
+      "type": "function",
+      "name": "getAuthToken",
+      "filePath": "lib/auth.ts",
+      "lineRange": [
+        44,
+        58
+      ],
+      "summary": "Obtains an interactive OAuth access token through the Chrome Identity API.",
+      "tags": [
+        "authentication",
+        "oauth",
+        "chrome-api"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/auth.ts:removeCachedToken",
+      "type": "function",
+      "name": "removeCachedToken",
+      "filePath": "lib/auth.ts",
+      "lineRange": [
+        63,
+        73
+      ],
+      "summary": "Removes a Chrome-cached OAuth token and returns API errors to the caller.",
+      "tags": [
+        "authentication",
+        "oauth",
+        "chrome-api"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/auth.ts:signOut",
+      "type": "function",
+      "name": "signOut",
+      "filePath": "lib/auth.ts",
+      "lineRange": [
+        78,
+        89
+      ],
+      "summary": "Silently retrieves and removes the current token, then attempts token revocation with Google.",
+      "tags": [
+        "authentication",
+        "oauth",
+        "sign-out"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/auth.ts:getAuthTokenSilent",
+      "type": "function",
+      "name": "getAuthTokenSilent",
+      "filePath": "lib/auth.ts",
+      "lineRange": [
+        94,
+        104
+      ],
+      "summary": "Retrieves an existing Chrome OAuth token without prompting the user.",
+      "tags": [
+        "authentication",
+        "oauth",
+        "chrome-api"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/auth.ts:getUserInfo",
+      "type": "function",
+      "name": "getUserInfo",
+      "filePath": "lib/auth.ts",
+      "lineRange": [
+        109,
+        120
+      ],
+      "summary": "Fetches the current authenticated profile from the backend and returns null on unavailable or invalid responses.",
+      "tags": [
+        "authentication",
+        "api-client",
+        "profile"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/search.ts:getSearchableText",
+      "type": "function",
+      "name": "getSearchableText",
+      "filePath": "lib/search.ts",
+      "lineRange": [
+        15,
+        56
+      ],
+      "summary": "Builds normalized search text from a link's title, URL, domain, path, query, and hash fragments.",
+      "tags": [
+        "search",
+        "normalization",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/search.ts:calculateScore",
+      "type": "function",
+      "name": "calculateScore",
+      "filePath": "lib/search.ts",
+      "lineRange": [
+        62,
+        102
+      ],
+      "summary": "Scores a link against all query terms using substring, word-boundary, exact-word, and fallback fuzzy matches.",
+      "tags": [
+        "search",
+        "ranking",
+        "algorithm"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lib/search.ts:fuzzyCharMatch",
+      "type": "function",
+      "name": "fuzzyCharMatch",
+      "filePath": "lib/search.ts",
+      "lineRange": [
+        107,
+        117
+      ],
+      "summary": "Tests whether a minimum-length pattern appears in order within a text string.",
+      "tags": [
+        "search",
+        "fuzzy-match",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/search.ts:searchLinks",
+      "type": "function",
+      "name": "searchLinks",
+      "filePath": "lib/search.ts",
+      "lineRange": [
+        138,
+        180
+      ],
+      "summary": "Filters saved links by date and returns query matches ordered by relevance and then recency.",
+      "tags": [
+        "search",
+        "filtering",
+        "ranking",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:server/middleware/auth.js:verifyGoogleToken",
+      "type": "function",
+      "name": "verifyGoogleToken",
+      "filePath": "server/middleware/auth.js",
+      "lineRange": [
+        10,
+        56
+      ],
+      "summary": "Authenticates a bearer token through Google's user-info service and maps invalid or unavailable-provider failures to API errors.",
+      "tags": [
+        "middleware",
+        "authentication",
+        "oauth",
+        "error-handling"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:entrypoints/popup/App.tsx",
+      "target": "function:entrypoints/popup/App.tsx:App",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:entrypoints/popup/components/Dashboard.tsx",
+      "target": "function:entrypoints/popup/components/Dashboard.tsx:Dashboard",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:entrypoints/popup/components/EmptyState.tsx",
+      "target": "function:entrypoints/popup/components/EmptyState.tsx:EmptyState",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:entrypoints/popup/components/LinkCard.tsx",
+      "target": "function:entrypoints/popup/components/LinkCard.tsx:LinkCard",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:entrypoints/popup/components/LinkCard.tsx",
+      "target": "function:entrypoints/popup/components/LinkCard.tsx:CopyButton",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:entrypoints/popup/components/SignIn.tsx",
+      "target": "function:entrypoints/popup/components/SignIn.tsx:SignIn",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/api.ts",
+      "target": "function:lib/api.ts:getApiErrorMessage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/api.ts",
+      "target": "function:lib/api.ts:readApiData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/api.ts",
+      "target": "function:lib/api.ts:getLinks",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/api.ts",
+      "target": "function:lib/api.ts:saveLink",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/api.ts",
+      "target": "function:lib/api.ts:updateLink",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/api.ts",
+      "target": "function:lib/api.ts:deleteLink",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/auth.ts",
+      "target": "function:lib/auth.ts:getCachedUserInfo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/auth.ts",
+      "target": "function:lib/auth.ts:cacheUserInfo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/auth.ts",
+      "target": "function:lib/auth.ts:clearCachedUserInfo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/auth.ts",
+      "target": "function:lib/auth.ts:getAuthToken",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/auth.ts",
+      "target": "function:lib/auth.ts:removeCachedToken",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/auth.ts",
+      "target": "function:lib/auth.ts:signOut",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/auth.ts",
+      "target": "function:lib/auth.ts:getAuthTokenSilent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/auth.ts",
+      "target": "function:lib/auth.ts:getUserInfo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/search.ts",
+      "target": "function:lib/search.ts:getSearchableText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/search.ts",
+      "target": "function:lib/search.ts:calculateScore",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/search.ts",
+      "target": "function:lib/search.ts:fuzzyCharMatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/search.ts",
+      "target": "function:lib/search.ts:searchLinks",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:server/middleware/auth.js",
+      "target": "function:server/middleware/auth.js:verifyGoogleToken",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:entrypoints/popup/App.tsx",
+      "target": "file:entrypoints/popup/components/SignIn.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:entrypoints/popup/App.tsx",
+      "target": "file:entrypoints/popup/components/Dashboard.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:entrypoints/popup/App.tsx",
+      "target": "file:entrypoints/popup/App.css",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:entrypoints/popup/components/Dashboard.tsx",
+      "target": "file:entrypoints/popup/components/LinkCard.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:entrypoints/popup/components/Dashboard.tsx",
+      "target": "file:entrypoints/popup/components/EmptyState.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:entrypoints/popup/main.tsx",
+      "target": "file:entrypoints/popup/App.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:entrypoints/popup/main.tsx",
+      "target": "file:entrypoints/popup/style.css",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lib/api.ts",
+      "target": "file:lib/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lib/auth.ts",
+      "target": "file:lib/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lib/search.ts",
+      "target": "file:lib/api.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/index.js",
+      "target": "file:server/middleware/auth.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server/index.js",
+      "target": "file:server/models/Link.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:entrypoints/popup/components/Dashboard.tsx",
+      "target": "function:entrypoints/popup/components/Dashboard.tsx:Dashboard",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:entrypoints/popup/components/EmptyState.tsx",
+      "target": "function:entrypoints/popup/components/EmptyState.tsx:EmptyState",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:entrypoints/popup/components/LinkCard.tsx",
+      "target": "function:entrypoints/popup/components/LinkCard.tsx:LinkCard",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:entrypoints/popup/components/SignIn.tsx",
+      "target": "function:entrypoints/popup/components/SignIn.tsx:SignIn",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/api.ts",
+      "target": "function:lib/api.ts:getApiErrorMessage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/api.ts",
+      "target": "function:lib/api.ts:getLinks",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/api.ts",
+      "target": "function:lib/api.ts:saveLink",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/api.ts",
+      "target": "function:lib/api.ts:updateLink",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/api.ts",
+      "target": "function:lib/api.ts:deleteLink",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/auth.ts",
+      "target": "function:lib/auth.ts:getCachedUserInfo",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/auth.ts",
+      "target": "function:lib/auth.ts:cacheUserInfo",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/auth.ts",
+      "target": "function:lib/auth.ts:clearCachedUserInfo",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/auth.ts",
+      "target": "function:lib/auth.ts:getAuthToken",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/auth.ts",
+      "target": "function:lib/auth.ts:removeCachedToken",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/auth.ts",
+      "target": "function:lib/auth.ts:signOut",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/auth.ts",
+      "target": "function:lib/auth.ts:getAuthTokenSilent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/auth.ts",
+      "target": "function:lib/auth.ts:getUserInfo",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/search.ts",
+      "target": "function:lib/search.ts:searchLinks",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:server/middleware/auth.js",
+      "target": "function:server/middleware/auth.js:verifyGoogleToken",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:entrypoints/popup/App.tsx:App",
+      "target": "function:lib/auth.ts:getAuthTokenSilent",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:entrypoints/popup/App.tsx:App",
+      "target": "function:lib/auth.ts:getCachedUserInfo",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:entrypoints/popup/App.tsx:App",
+      "target": "function:lib/auth.ts:getUserInfo",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:entrypoints/popup/components/Dashboard.tsx:Dashboard",
+      "target": "function:lib/api.ts:getLinks",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:entrypoints/popup/components/Dashboard.tsx:Dashboard",
+      "target": "function:lib/api.ts:saveLink",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:entrypoints/popup/components/Dashboard.tsx:Dashboard",
+      "target": "function:lib/api.ts:updateLink",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:entrypoints/popup/components/Dashboard.tsx:Dashboard",
+      "target": "function:lib/api.ts:deleteLink",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:entrypoints/popup/components/Dashboard.tsx:Dashboard",
+      "target": "function:lib/auth.ts:signOut",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:entrypoints/popup/components/Dashboard.tsx:Dashboard",
+      "target": "function:lib/search.ts:searchLinks",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:entrypoints/popup/components/SignIn.tsx:SignIn",
+      "target": "function:lib/auth.ts:getAuthToken",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:entrypoints/popup/components/SignIn.tsx:SignIn",
+      "target": "function:lib/auth.ts:getUserInfo",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "config:.env.example",
+      "target": "file:lib/config.ts",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:package.json",
+      "target": "file:wxt.config.ts",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:package.json",
+      "target": "file:entrypoints/popup/main.tsx",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:server/.env.example",
+      "target": "file:server/index.js",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:server/package.json",
+      "target": "file:server/index.js",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:server/vercel.json",
+      "target": "file:server/index.js",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:tsconfig.json",
+      "target": "file:entrypoints/popup/main.tsx",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:tsconfig.json",
+      "target": "file:entrypoints/popup/components/Dashboard.tsx",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "document:README.md",
+      "target": "file:entrypoints/popup/main.tsx",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:README.md",
+      "target": "file:server/index.js",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:README.md",
+      "target": "file:wxt.config.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:CONTRIBUTING.md",
+      "target": "config:package.json",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:SECURITY.md",
+      "target": "file:server/middleware/auth.js",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}
