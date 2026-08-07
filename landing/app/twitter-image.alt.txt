@@ -1,0 +1,1 @@
+LinkSave Chrome extension beside a webpage, with the message “Save less. Remember more.”

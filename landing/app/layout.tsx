@@ -28,11 +28,12 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     siteName: 'LinkSave',
+    locale: 'en_US',
     title: 'LinkSave — Save less. Remember more.',
     description: 'A Chrome extension for saving, organizing, and finding the web pages that matter to you.',
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: 'LinkSave — Save less. Remember more.',
     description: 'A Chrome extension for saving, organizing, and finding the web pages that matter to you.',
   },
