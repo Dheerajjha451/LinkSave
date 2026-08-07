@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Chrome, Github, Sparkles } from 'lucide-react';
-import { useState } from 'react';
 import TypewriterText from './components/TypewriterText';
 
 const chromeStoreUrl = 'https://chromewebstore.google.com/detail/linksave/ojikdodfhnpohghabhaebmkglmpagenm';
@@ -25,8 +24,6 @@ const fadeUp = {
 };
 
 export default function Home() {
-  const [hoveredAction, setHoveredAction] = useState<string | null>(null);
-
   return (
     <main className="landing">
       <script
@@ -66,7 +63,7 @@ export default function Home() {
           className="hero__content"
           initial="hidden"
           animate="visible"
-          transition={{ staggerChildren: 0.1, delayChildren: 0.12 }}
+          transition={{ staggerChildren: 0.26, delayChildren: 0.86 }}
         >
           <motion.p className="hero__eyebrow" variants={fadeUp} transition={{ duration: 0.55 }}>
             <Sparkles size={14} aria-hidden="true" />
@@ -74,8 +71,8 @@ export default function Home() {
           </motion.p>
 
           <motion.h1 variants={fadeUp} transition={{ duration: 0.6 }}>
-            <TypewriterText text="Save less." showCursor={false} /><br />
-            <em><TypewriterText text="Remember more." startDelay={520} /></em>
+            <TypewriterText text="Save less." startDelay={980} showCursor={false} /><br />
+            <em><TypewriterText text="Remember more." startDelay={1600} /></em>
           </motion.h1>
 
           <motion.p className="hero__description" variants={fadeUp} transition={{ duration: 0.6 }}>
@@ -89,11 +86,6 @@ export default function Home() {
               href={chromeStoreUrl}
               target="_blank"
               rel="noreferrer"
-              data-hovered={hoveredAction === 'chrome'}
-              onPointerEnter={() => setHoveredAction('chrome')}
-              onPointerLeave={() => setHoveredAction(null)}
-              onFocus={() => setHoveredAction('chrome')}
-              onBlur={() => setHoveredAction(null)}
             >
               <Chrome size={18} strokeWidth={2.15} />
               Install for Chrome
@@ -104,11 +96,6 @@ export default function Home() {
               href={githubUrl}
               target="_blank"
               rel="noreferrer"
-              data-hovered={hoveredAction === 'github'}
-              onPointerEnter={() => setHoveredAction('github')}
-              onPointerLeave={() => setHoveredAction(null)}
-              onFocus={() => setHoveredAction('github')}
-              onBlur={() => setHoveredAction(null)}
             >
               <Github size={18} strokeWidth={2.15} />
               Contribute on GitHub
@@ -123,7 +110,7 @@ export default function Home() {
             className="showcase"
             initial={{ opacity: 0, y: 42, rotateX: 8 }}
             animate={{ opacity: 1, y: 0, rotateX: 0 }}
-            transition={{ duration: 0.85, delay: 0.44, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.85, delay: 2.42, ease: [0.22, 1, 0.36, 1] }}
           >
             <div className="showcase__halo" aria-hidden="true" />
             <div className="browser-frame">

@@ -259,13 +259,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .button--primary:hover {
-  transform: translateY(-4px) scale(1.025);
-  background: var(--accent-bright);
-  box-shadow: 0 16px 38px rgba(59, 130, 246, .45), 0 0 0 5px rgba(59, 130, 246, .14), inset 0 1px rgba(255,255,255,.46);
-}
-
-.button--primary[data-hovered="true"] {
-  transform: translateY(-6px) scale(1.04);
+  transform: scale(1.035);
   background: linear-gradient(135deg, #60a5fa, #2563eb);
   box-shadow: 0 20px 44px rgba(37, 99, 235, .58), 0 0 0 7px rgba(59, 130, 246, .19), inset 0 1px rgba(255,255,255,.48);
 }
@@ -279,14 +273,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .button--quiet:hover {
-  transform: translateY(-4px) scale(1.025);
-  border-color: var(--line-bright);
-  background: rgba(17, 47, 48, .78);
-  box-shadow: 0 15px 32px rgba(0,0,0,.35), 0 0 0 5px rgba(115, 177, 255, .11), inset 0 1px rgba(255,255,255,.12);
-}
-
-.button--quiet[data-hovered="true"] {
-  transform: translateY(-6px) scale(1.04);
+  transform: scale(1.035);
   border-color: rgba(151, 206, 255, .9);
   color: #fff;
   background: linear-gradient(135deg, rgba(77, 145, 246, .94), rgba(29, 76, 172, .97));
@@ -296,8 +283,7 @@ a { color: inherit; text-decoration: none; }
 .button:active { transform: translateY(-1px) scale(.985); }
 
 .button__arrow { transition: transform .22s cubic-bezier(.22, 1, .36, 1); }
-.button:hover .button__arrow { transform: translate(2px, -2px); }
-.button[data-hovered="true"] .button__arrow { transform: translate(4px, -4px); }
+.button:hover .button__arrow { transform: translate(4px, -4px); }
 
 .showcase-shell {
   position: relative;
@@ -310,7 +296,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .showcase-shell:hover {
-  transform: translateY(-10px) scale(1.018);
+  transform: scale(1.014);
 }
 
 .showcase-shell:hover .browser-frame {
@@ -358,7 +344,7 @@ a { color: inherit; text-decoration: none; }
   content: '';
   background: linear-gradient(115deg, transparent 26%, rgba(168, 235, 255, .12) 47%, transparent 65%);
   transform: translateX(-125%);
-  animation: sheen 6s ease-in-out 1.1s infinite;
+  animation: sheen 6s ease-in-out 3.4s infinite;
 }
 
 .browser-frame__image {
