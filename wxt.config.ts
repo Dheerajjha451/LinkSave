@@ -15,7 +15,7 @@ export default defineConfig({
   manifest: {
     name: 'LinkSave',
     description: 'Save and organize your favorite links. Private to you, accessible anywhere.',
-    version: '1.0.0',
+    version: '1.1.1',
     permissions: [
       'identity',
       'activeTab',
