@@ -3,10 +3,17 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Chrome, Github, Sparkles } from 'lucide-react';
+import Navbar from './components/Navbar';
+import BentoGrid from './components/BentoGrid';
+import InteractiveDemo from './components/InteractiveDemo';
+import HowItWorks from './components/HowItWorks';
+import FaqSection from './components/FaqSection';
+import Footer from './components/Footer';
 import TypewriterText from './components/TypewriterText';
 
 const chromeStoreUrl = 'https://chromewebstore.google.com/detail/linksave/ojikdodfhnpohghabhaebmkglmpagenm';
 const githubUrl = 'https://github.com/Dheerajjha451/LinkSave';
+
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
@@ -19,114 +26,159 @@ const structuredData = {
 };
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 22 },
+  hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 },
 };
 
 export default function Home() {
   return (
-    <main className="landing">
+    <main className="landing-wrapper">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <div className="landing__noise" aria-hidden="true" />
-      <div className="landing__orb landing__orb--blue" aria-hidden="true" />
-      <div className="landing__orb landing__orb--grey" aria-hidden="true" />
+      <div className="landing-noise" aria-hidden="true" />
+      <div className="ambient-glow ambient-glow--top" aria-hidden="true" />
+      <div className="ambient-glow ambient-glow--bento" aria-hidden="true" />
 
-      <motion.header
-        className="site-brand"
-        initial={{ opacity: 0, y: -30, scaleX: 0.2, filter: 'blur(10px)' }}
-        animate={{ opacity: 1, y: 0, scaleX: 1, filter: 'blur(0px)' }}
-        transition={{ duration: 0.78, ease: [0.22, 1, 0.36, 1] }}
-      >
-        <motion.div
-          className="site-brand__mark"
-          initial={{ opacity: 0, rotate: -14, scale: 0.65 }}
-          animate={{ opacity: 1, rotate: [-14, 8, -3, 0], scale: [0.65, 1.16, 0.96, 1] }}
-          transition={{ duration: 0.68, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <Image src="/linksave-icon.svg" alt="LinkSave" width={46} height={46} priority />
-        </motion.div>
-        <motion.span
-          className="site-brand__name"
-          initial={{ opacity: 0, x: -14 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.42, delay: 0.38, ease: 'easeOut' }}
-        >
-          LinkSave
-        </motion.span>
-      </motion.header>
+      {/* Floating Header Navbar */}
+      <Navbar />
 
-      <section className="hero">
+      {/* Hero Section */}
+      <section className="hero-section">
         <motion.div
-          className="hero__content"
           initial="hidden"
           animate="visible"
-          transition={{ staggerChildren: 0.26, delayChildren: 0.86 }}
+          transition={{ staggerChildren: 0.12, delayChildren: 0.05 }}
+          style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
         >
-          <motion.p className="hero__eyebrow" variants={fadeUp} transition={{ duration: 0.55 }}>
-            <Sparkles size={14} aria-hidden="true" />
-            Your personal link library
-          </motion.p>
+          <motion.div
+            animate={{ y: [0, -4, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+          >
+            <motion.div
+              className="hero-eyebrow"
+              variants={fadeUp}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              whileHover={{ scale: 1.04 }}
+            >
+              <Sparkles size={14} style={{ color: 'var(--accent-cyan)' }} />
+              <span>Your Personal Link Library</span>
+            </motion.div>
+          </motion.div>
 
-          <motion.h1 variants={fadeUp} transition={{ duration: 0.6 }}>
-            <TypewriterText text="Save less." startDelay={980} showCursor={false} /><br />
-            <em><TypewriterText text="Remember more." startDelay={1600} /></em>
+          <motion.h1
+            className="hero-title"
+            variants={fadeUp}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <TypewriterText text="Save less," startDelay={250} speed={55} showCursor={false} />{' '}
+            <span className="font-serif-italic">
+              <TypewriterText text="Remember more." startDelay={900} speed={55} />
+            </span>
           </motion.h1>
 
-          <motion.p className="hero__description" variants={fadeUp} transition={{ duration: 0.6 }}>
-            LinkSave gives every useful page a place to live. Save a link in one click,
-            then return to it when the moment is right.
+          <motion.p
+            className="hero-subtitle"
+            variants={fadeUp}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          >
+            LinkSave gives every useful page a place to live. Save active tab links in one click,
+            filter by date range, and recall what matters instantly.
           </motion.p>
 
-          <motion.div className="hero__actions" variants={fadeUp} transition={{ duration: 0.6 }}>
-            <a
-              className="button button--primary"
+          <motion.div
+            className="hero-ctas"
+            variants={fadeUp}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <motion.a
               href={chromeStoreUrl}
               target="_blank"
               rel="noreferrer"
+              className="btn btn--primary"
+              style={{ height: '48px', padding: '0 22px' }}
+              whileHover={{ y: -2, scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 25 }}
             >
-              <Chrome size={18} strokeWidth={2.15} />
-              Install for Chrome
-              <ArrowUpRight className="button__arrow" size={16} strokeWidth={2.2} />
-            </a>
-            <a
-              className="button button--quiet"
+              <Chrome size={18} />
+              <span>Install for Chrome</span>
+              <ArrowUpRight className="btn--icon-arrow" size={16} />
+            </motion.a>
+
+            <motion.a
               href={githubUrl}
               target="_blank"
               rel="noreferrer"
+              className="btn btn--secondary"
+              style={{ height: '48px', padding: '0 20px' }}
+              whileHover={{ y: -2, scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 25 }}
             >
-              <Github size={18} strokeWidth={2.15} />
-              Contribute on GitHub
-              <ArrowUpRight className="button__arrow" size={16} strokeWidth={2.2} />
-            </a>
+              <Github size={18} />
+              <span>Contribute on GitHub</span>
+            </motion.a>
           </motion.div>
-
         </motion.div>
 
-        <div className="showcase-shell">
+        {/* Faux macOS Frame Showcase */}
+        <div className="showcase-container">
           <motion.div
-            className="showcase"
-            initial={{ opacity: 0, y: 42, rotateX: 8 }}
-            animate={{ opacity: 1, y: 0, rotateX: 0 }}
-            transition={{ duration: 0.85, delay: 2.42, ease: [0.22, 1, 0.36, 1] }}
+            className="mac-frame"
+            initial={{ opacity: 0, y: 50, scale: 0.96 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            whileHover={{ y: -4, scale: 1.005 }}
           >
-            <div className="showcase__halo" aria-hidden="true" />
-            <div className="browser-frame">
-              <Image
-                className="browser-frame__image"
-                src="/image.png"
-                alt="LinkSave Chrome extension open beside a webpage"
-                width={1920}
-                height={1440}
-                priority
-                unoptimized
-              />
+            <div className="mac-frame__header">
+              <div className="mac-frame__dots">
+                <span className="mac-frame__dot mac-frame__dot--red" />
+                <span className="mac-frame__dot mac-frame__dot--yellow" />
+                <span className="mac-frame__dot mac-frame__dot--green" />
+              </div>
+              <div className="mac-frame__address-bar">
+                <span>chrome-extension://linksave</span>
+              </div>
+              <div style={{ width: '40px' }} />
             </div>
+
+            <Image
+              className="mac-frame__image"
+              src="/image.png"
+              alt="LinkSave Chrome extension preview interface"
+              width={1920}
+              height={1440}
+              priority
+              unoptimized
+            />
           </motion.div>
         </div>
       </section>
+
+      {/* Feature Bento Grid (Current Features) */}
+      <div id="features">
+        <BentoGrid />
+      </div>
+
+      {/* Interactive Extension Demo Sandbox */}
+      <div id="sandbox">
+        <InteractiveDemo />
+      </div>
+
+      {/* How It Works Workflow */}
+      <div id="workflow">
+        <HowItWorks />
+      </div>
+
+      {/* FAQ Section */}
+      <div id="faq">
+        <FaqSection />
+      </div>
+
+      {/* Footer Banner & Bottom Links */}
+      <Footer />
     </main>
   );
 }

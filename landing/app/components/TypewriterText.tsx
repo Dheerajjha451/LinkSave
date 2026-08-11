@@ -12,8 +12,8 @@ interface TypewriterTextProps {
 export default function TypewriterText({
   text,
   startDelay = 0,
-  speed = 58,
-  showCursor = true,
+  speed = 55,
+  showCursor = false,
 }: TypewriterTextProps) {
   const [visibleText, setVisibleText] = useState('');
 
@@ -36,8 +36,8 @@ export default function TypewriterText({
   }, [speed, startDelay, text]);
 
   return (
-    <span className="typewriter-text" aria-label={text}>
-      <span aria-hidden="true">{visibleText}</span>
+    <span className="typewriter-inline">
+      {visibleText}
       {showCursor && <span className="typewriter-text__cursor" aria-hidden="true" />}
     </span>
   );
