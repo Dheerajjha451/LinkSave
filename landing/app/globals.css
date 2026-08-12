@@ -36,6 +36,9 @@
 html, body {
   min-height: 100%;
   scroll-behavior: smooth;
+  /* Keep decorative glows and animated transforms from widening the mobile viewport. */
+  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -46,6 +49,7 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+  overflow-x: clip;
 }
 
 a {
@@ -63,6 +67,9 @@ a {
 .landing-wrapper {
   position: relative;
   min-height: 100dvh;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-x: clip;
   background:
     radial-gradient(ellipse 110% 48% at 50% 112%, #0b8d9b 0%, #075a74 27%, #06364d 45%, #061d29 63%, transparent 78%),
     linear-gradient(180deg, #05080c 0%, #07111a 64%, #042631 100%);
@@ -389,12 +396,14 @@ a {
 .showcase-container {
   width: 100%;
   max-width: 1080px;
+  min-width: 0;
   margin: 0 auto;
   padding: 0 16px;
 }
 
 .mac-frame {
   position: relative;
+  min-width: 0;
   border: 1px solid rgba(117, 190, 255, 0.32);
   border-radius: var(--radius-xl);
   background: #030707;
@@ -448,6 +457,10 @@ a {
   font-family: var(--font-mono);
   font-size: 11px;
   width: min(320px, 50%);
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .mac-frame__image {
